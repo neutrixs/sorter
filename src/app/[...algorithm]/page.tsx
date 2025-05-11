@@ -8,9 +8,7 @@ export default function Page() {
             <p className={`${style.card}`}>Sorting algorithms, visualized:</p>
             <div className={`${style.algorithmList}`}>
                 {algorithms.map(([type]) => (
-                    <div key={type} className={`${style.card} ${style.algorithm}`}>
-                        <CardContent type={type} opened={false} />
-                    </div>
+                    <CardContent type={type} key={type}/>
                 ))}
             </div>
         </div>
