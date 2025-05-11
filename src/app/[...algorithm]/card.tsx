@@ -3,6 +3,7 @@ import {Dispatch, SetStateAction, useMemo} from "react";
 import {motion} from "motion/react"
 import {algorithms, Algorithms} from "./algorithms";
 import Fullscreen from "src/icons/open_fullscreen"
+import CloseFullscreen from "src/icons/close_fullscreen";
 import style from "./style.module.css";
 
 interface props {
@@ -28,7 +29,7 @@ export default function CardContent({type, open, setOpen}: props) {
                 onClick={() => setOpen(open ? null : type)}
                 onKeyDown={(e) => e.key == "Enter" && setOpen(open ? null : type)}
             >
-                <Fullscreen/>
+                {open ? <CloseFullscreen id={type}/> : <Fullscreen id={type}/>}
             </div>
         </div>
         <p className={style.description}>Time complexity: {complexity}</p>
@@ -36,8 +37,8 @@ export default function CardContent({type, open, setOpen}: props) {
     </motion.div>
 
     return !open ? card :
-        <motion.div className={style.openedCardContainer} initial={{opacity: 0}} animate={{opacity: 1}}
-                    exit={{opacity: 0}}>
+        <motion.div className={style.openedCardContainer} initial={{backgroundColor: "#00000000"}} animate={{backgroundColor: "#00000080"}}
+                    exit={{backgroundColor: "#00000000"}}>
             {card}
         </motion.div>
 }
