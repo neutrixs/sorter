@@ -78,8 +78,8 @@
 }
 
 .openedCardContainer .card {
-    max-width: calc(100vw - 2em);
-    max-height: calc(100vh - 2em);
+    max-width: calc(100% - 2em);
+    max-height: calc(100% - 2em);
 }
 
 @media (prefers-color-scheme: dark) {
