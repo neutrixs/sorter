@@ -26,8 +26,8 @@ export default function CardContent({type}: { type: Algorithms }) {
     </motion.div>
 
     return !open ? cardClosed : (
-        <div className={style.openedCardContainer}>
+        <motion.div className={style.openedCardContainer} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
             {cardClosed}
-        </div>
+        </motion.div>
     )
 }
