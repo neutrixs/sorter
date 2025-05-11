@@ -77,6 +77,11 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.openedCardContainer .card {
+    max-width: calc(100vw - 2em);
+    max-height: calc(100vh - 2em);
+}
+
 @media (prefers-color-scheme: dark) {
     .card {
         background-color: #404040;

@@ -2,7 +2,7 @@
 import {Dispatch, SetStateAction, useMemo} from "react";
 import {motion} from "motion/react"
 import {algorithms, Algorithms} from "./algorithms";
-import Fullscreen from "src/icons/open_fullscreen.svg";
+import Fullscreen from "src/icons/open_fullscreen"
 import style from "./style.module.css";
 
 interface props {
@@ -35,9 +35,9 @@ export default function CardContent({type, open, setOpen}: props) {
         <p className={style.description}>{description}</p>
     </motion.div>
 
-    return !open ? card : (
-        <motion.div className={style.openedCardContainer} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+    return !open ? card :
+        <motion.div className={style.openedCardContainer} initial={{opacity: 0}} animate={{opacity: 1}}
+                    exit={{opacity: 0}}>
             {card}
         </motion.div>
-    )
 }
