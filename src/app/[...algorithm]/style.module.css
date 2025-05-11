@@ -1,0 +1,84 @@
+.root {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+    background-color: #fafafa;
+    padding: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    box-shadow: 0 0.05em 0.05em 0.02em #ffffffff inset, 0 0.05em 0.05em 0.02em #d0d0d080;
+}
+
+.algorithmList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    max-width: 70em;
+}
+
+.card.algorithm {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.card.algorithm > .description {
+    font-size: 0.75em;
+    font-weight: normal;
+}
+
+.card.algorithm > .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+    width: 100%;
+    align-items: center;
+}
+
+.card.algorithm > .title > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card.algorithm svg {
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.card.algorithm path {
+    fill: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+    .card {
+        background-color: #404040;
+        box-shadow: 0 0.05em 0.05em 0.02em #80808080 inset, 0 0.05em 0.05em 0.02em #00000080;
+    }
+}
+
+@media (max-width: 40rem) {
+    .root {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 32rem) {
+    .algorithmList {
+        grid-template-columns: 1fr;
+    }
+}
