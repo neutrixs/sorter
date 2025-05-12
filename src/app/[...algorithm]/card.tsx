@@ -16,7 +16,6 @@ export default function CardContent({type, open, setOpen}: props) {
     const [, displayName, complexity, description] = useMemo(() => algorithms.find(([t]) => t === type)!, [type]);
 
     const card = <motion.div
-        layout={"position"}
         layoutId={type}
         key={type}
         className={`${style.card} ${style.algorithm}`}
@@ -29,7 +28,7 @@ export default function CardContent({type, open, setOpen}: props) {
                 onClick={() => setOpen(open ? null : type)}
                 onKeyDown={(e) => e.key == "Enter" && setOpen(open ? null : type)}
             >
-                {open ? <CloseFullscreen id={type}/> : <Fullscreen id={type}/>}
+                {open ? <CloseFullscreen /> : <Fullscreen />}
             </div>
         </div>
         <p className={style.description}>Time complexity: {complexity}</p>
